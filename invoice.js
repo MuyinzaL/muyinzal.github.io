@@ -80,7 +80,7 @@ function formatNumberAsUSD(value) {
   value = (value === -0 ? 0 : value);       // Avoid negative zero.
 
   const result = value.toLocaleString('en', {
-    style: 'currency', currency: 'USD'
+    style: 'currency', currency: 'UGX '
   })
   if (result.includes('NaN')) {
     return value;
@@ -242,3 +242,4 @@ ready(function() {
     updateInvoice({});
   }
 });
+
