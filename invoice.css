@@ -73,7 +73,7 @@ table.items {
 }
 
 table.items th {
-  text-align: center;
+  text-align: left;
   color: white;
   text-transform: uppercase;
   font-weight: normal;
@@ -83,6 +83,7 @@ table.items th {
 table.items td {
   background-color: white;
   padding: 4px;
+  text-align: center;
 }
 
 .client .title, .summary .title, table.items th, .help .title {
@@ -316,4 +317,5 @@ div.column-name {
   margin-bottom: 1px;
   border-radius: 0.25em;
 }
+
 
