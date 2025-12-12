@@ -104,7 +104,7 @@ function formatNumberAsUGX(value) {
   num = Math.round(num);
 
   // Add space after UGX
-  return "UGX " + num.toLocaleString('en');
+  return "UGX\u00A0" + num.toLocaleString('en');
 }
 
 Vue.filter('fallback', function(value, str) {
@@ -261,6 +261,7 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
 
 
