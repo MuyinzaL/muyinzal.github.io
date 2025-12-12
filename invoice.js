@@ -90,14 +90,12 @@ let app = undefined;
 
 // register filter name 'currency' the same as before
 Vue.filter('currency', formatNumberAsUGX);
-
 function formatNumberAsUGX(value) {
   if (typeof value !== "number") {
     return value || '—';
   }
   // UGX usually doesn't use cents; round to integer
   const rounded = Math.round(value);
-
   // format with thousands separators
   // 'en' locale works broadly; you can change to 'en-UG' if desired
   return "UGX" + rounded.toLocaleString('en');
@@ -257,6 +255,7 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
 
 
