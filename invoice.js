@@ -88,15 +88,19 @@ let app = undefined;
 //  return result;
 //}
 
-Vue.filter('currency', formatNumberAsUGX)
+// register filter name 'currency' the same as before
+Vue.filter('currency', formatNumberAsUGX);
+
 function formatNumberAsUGX(value) {
   if (typeof value !== "number") {
     return value || '—';
   }
-  
-  value = Math.round(value);  // No cents in UGX
+  // UGX usually doesn't use cents; round to integer
+  const rounded = Math.round(value);
 
-  return "UGX " + value.toLocaleString('en-UG');
+  // format with thousands separators
+  // 'en' locale works broadly; you can change to 'en-UG' if desired
+  return "UGX " + rounded.toLocaleString('en');
 }
 
 Vue.filter('fallback', function(value, str) {
@@ -253,5 +257,6 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
 
