@@ -73,7 +73,7 @@ table.items {
 }
 
 table.items th {
-  text-align: left;
+  text-align: center;
   color: white;
   text-transform: uppercase;
   font-weight: normal;
@@ -316,3 +316,4 @@ div.column-name {
   margin-bottom: 1px;
   border-radius: 0.25em;
 }
+
