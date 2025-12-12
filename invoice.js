@@ -71,21 +71,32 @@ const data = {
 };
 let app = undefined;
 
-Vue.filter('currency', formatNumberAsUSD)
-function formatNumberAsUSD(value) {
-  if (typeof value !== "number") {
-    return value || '—';      // falsy value would be shown as a dash.
-  }
-  value = Math.round(value * 100) / 100;    // Round to nearest cent.
-  value = (value === -0 ? 0 : value);       // Avoid negative zero.
+//Vue.filter('currency', formatNumberAsUSD)
+//function formatNumberAsUSD(value) {
+//  if (typeof value !== "number") {
+//    return value || '—';      // falsy value would be shown as a dash.
+//  }
+//  value = Math.round(value * 100) / 100;    // Round to nearest cent.
+//  value = (value === -0 ? 0 : value);       // Avoid negative zero.
 
-  const result = value.toLocaleString('en', {
-    style: 'currency', currency: 'UGX '
-  })
-  if (result.includes('NaN')) {
-    return value;
+//  const result = value.toLocaleString('en', {
+//    style: 'currency', currency: 'UGX '
+//  })
+//  if (result.includes('NaN')) {
+//    return value;
+//  }
+//  return result;
+//}
+
+Vue.filter('currency', formatNumberAsUGX)
+function formatNumberAsUGX(value) {
+  if (typeof value !== "number") {
+    return value || '—';
   }
-  return result;
+  
+  value = Math.round(value);  // No cents in UGX
+
+  return "UGX " + value.toLocaleString('en-UG');
 }
 
 Vue.filter('fallback', function(value, str) {
@@ -242,4 +253,5 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
