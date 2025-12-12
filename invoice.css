@@ -91,7 +91,7 @@ table.items td {
 }
 
 .money, .number {
-  text-align: left;
+  text-align: center;
 }
 
 .name {
@@ -316,6 +316,7 @@ div.column-name {
   margin-bottom: 1px;
   border-radius: 0.25em;
 }
+
 
 
 
