@@ -90,15 +90,21 @@ let app = undefined;
 
 // register filter name 'currency' the same as before
 Vue.filter('currency', formatNumberAsUGX);
+
 function formatNumberAsUGX(value) {
-  if (typeof value !== "number") {
-    return value || '—';
+  if (value === null || value === undefined || value === "") {
+    return "";
   }
-  // UGX usually doesn't use cents; round to integer
-  const rounded = Math.round(value);
-  // format with thousands separators
-  // 'en' locale works broadly; you can change to 'en-UG' if desired
-  return "UGX " + rounded.toLocaleString('en');
+
+  // Make sure the value is a number
+  let num = Number(value);
+  if (isNaN(num)) return value;
+
+  // Round to whole shillings
+  num = Math.round(num);
+
+  // Add space after UGX
+  return "UGX " + num.toLocaleString('en');
 }
 
 Vue.filter('fallback', function(value, str) {
@@ -255,6 +261,7 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
 
 
