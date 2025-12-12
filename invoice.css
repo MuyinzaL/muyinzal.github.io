@@ -83,7 +83,6 @@ table.items th {
 table.items td {
   background-color: white;
   padding: 4px;
-  text-align: center;
 }
 
 .client .title, .summary .title, table.items th, .help .title {
@@ -92,7 +91,7 @@ table.items td {
 }
 
 .money, .number {
-  text-align: right;
+  text-align: center;
 }
 
 .name {
@@ -317,5 +316,6 @@ div.column-name {
   margin-bottom: 1px;
   border-radius: 0.25em;
 }
+
 
 
