@@ -100,7 +100,7 @@ function formatNumberAsUGX(value) {
 
   // format with thousands separators
   // 'en' locale works broadly; you can change to 'en-UG' if desired
-  return "UGX " + rounded.toLocaleString('en');
+  return "UGX" + rounded.toLocaleString('en');
 }
 
 Vue.filter('fallback', function(value, str) {
@@ -257,6 +257,7 @@ ready(function() {
     updateInvoice({});
   }
 });
+
 
 
 
